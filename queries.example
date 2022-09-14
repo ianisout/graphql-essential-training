@@ -64,3 +64,9 @@ mutation {
     }
   }
 }
+
+// delete product
+
+mutation {
+  deleteProduct(id: "6321c51e911df45c42656d53")
+}
