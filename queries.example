@@ -67,6 +67,24 @@ query {
   }
 }
 
+// query with fragments
+
+query {
+  widget1: getProduct(id:"6321be359a1f09e3daf79272") {
+    ...widgetFragment
+  }
+  widget2: getProduct(id:"6321bfa59a1f09e3daf79275") {
+    ...widgetFragment
+  }
+}
+
+fragment widgetFragment on Product {
+  name
+  price
+  desc
+  soldOut
+}
+
 // update item
 
 mutation {
