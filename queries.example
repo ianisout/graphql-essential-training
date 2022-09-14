@@ -1,0 +1,45 @@
+// adding item
+
+mutation {
+  createProduct(input:{
+    name:"Widget6",
+    desc: "Another widget for your garden",
+    price: 83.99,
+    soldOut: ONSALE,
+    inventory:11,
+    stores: [
+      {
+        store: "Passadina"
+      },
+      {
+        store: "Ventura"
+      }
+    ]
+  }) {
+    id
+    name
+    desc
+    price
+    soldOut
+    inventory
+    stores {
+      store
+    }
+  }
+}
+
+// query an item
+
+query {
+  getProduct(id: "6321bfa59a1f09e3daf79275") {
+    id
+    name
+    desc
+    price
+    soldOut
+    inventory
+    stores {
+      store
+    }
+  }
+}

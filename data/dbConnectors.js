@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { sequelize, DataTypes } from 'sequelize';
+// import { sequelize as s, DataTypes } from 'sequelize';
 import _ from 'lodash';
 import casual from 'casual';
 
@@ -32,7 +32,7 @@ const widgetSchema = new mongoose.Schema({
 
 const Widgets = mongoose.model('widgets', widgetSchema);
 
-// Sequelize connection
+/* // Sequelize connection
 
 // creates a db sqlite inside of the memory of local system
 const sequelize = new Sequelize('sqlite::memory');
@@ -49,6 +49,6 @@ Categories.sync({ force: true }).then(() => {
       desc: casual.sentence,
     });
   });
-});
+}); */
 
-export { Widgets, Categories };
+export { Widgets, /* Categories */ };

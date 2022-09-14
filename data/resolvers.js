@@ -12,9 +12,23 @@ export const resolvers = {
   },
 
   createProduct: ({ input }) => {
-    // let id = require('crypto').randomBytes(10).toString('hex');
-    // productDatabase[id] = input;
-    // return new Product(id, input);
+    const newWidget = new Widgets({
+      name: input.name,
+      desc: input.desc,
+      price: input.price,
+      soldOut: input.soldOut,
+      inventory: input.inventory,
+      stores: input.stores,
+    });
+
+    newWidget.id = newWidget._id;
+
+    return new Promise((resolve) => {
+      newWidget.save((err) => {
+        if (err) reject(err);
+        else resolve(newWidget);
+      });
+    });
   },
 };
 
