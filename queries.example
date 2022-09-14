@@ -44,6 +44,16 @@ query {
   }
 }
 
+// query all products
+
+query {
+  getAllProducts {
+    name
+    price
+    desc
+  }
+}
+
 // update item
 
 mutation {
