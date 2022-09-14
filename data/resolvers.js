@@ -30,6 +30,20 @@ export const resolvers = {
       });
     });
   },
+
+  updateProduct: ({ input }) => {
+    return new Promise((resolve) => {
+      Widgets.findOneAndUpdate(
+        { _id: input.id },
+        input,
+        { new: true },
+        (err, widget) => {
+          if (err) reject;
+          else resolve(widget);
+        }
+      );
+    });
+  },
 };
 
 export default resolvers;

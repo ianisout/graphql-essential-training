@@ -43,3 +43,24 @@ query {
     }
   }
 }
+
+// update item
+
+mutation {
+  updateProduct(input: {
+    id: "6321bfa59a1f09e3daf79275",
+    price: 79.99,
+    soldOut:SOLDOUT
+    stores: [
+      { store: "New Store" },
+      { store: "Other new Store"}
+  	]
+  }) {
+    price
+    soldOut
+    stores {
+      store,
+      store
+    }
+  }
+}
